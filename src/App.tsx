@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { CounterStoreProvider } from './store/CounterContext';
+import Comp1 from './Comp1';
+import Comp2 from './Comp2';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterStoreProvider>
+      <main>
+          <Comp1 />
+          <Comp2 />
+      </main>
+    </CounterStoreProvider>
   );
 }
 
